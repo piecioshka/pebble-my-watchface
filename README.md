@@ -2,10 +2,12 @@
 
 > My own Pebble watchface.
 
+![](./resources/images/screenshot.png)
+
 ### Goals
 
 * display hours and minutes in large font
-* start vibration on each full hour, ex. 4:00, 18:00
+* start vibration on each full hour, ex. `4:00`, `12:00`
 
 ## Build
 
