@@ -1,6 +1,11 @@
 # pebble-my-watchface
 
-> My own Pebble watch face with IP address.
+> My own Pebble watchface.
+
+### Goals
+
+* display hours and minutes in large font
+* start vibration on each full hour, ex. 4:00, 18:00
 
 ## Build
 
