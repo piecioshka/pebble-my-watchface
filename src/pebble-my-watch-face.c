@@ -1,37 +1,8 @@
 #include <pebble.h>
 
-#define IP 0
-
 static Window *s_main_window;
 static TextLayer *s_time_layer;
 static TextLayer *s_ip_layer;
-
-static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
-    // Store incoming information
-    static char ip_buffer[256];
-    
-    // Read tuples for data
-    Tuple *ip_tuple = dict_find(iterator, IP);
-    
-    // If all data is available, use it
-    if (ip_tuple) {
-        snprintf(ip_buffer, sizeof(ip_buffer), "%s", ip_tuple->value->cstring);
-        text_layer_set_text(s_ip_layer, ip_buffer);
-    }
-}
-
-static void inbox_dropped_callback(AppMessageResult reason, void *context) {
-    APP_LOG(APP_LOG_LEVEL_ERROR, "Message dropped!");
-}
-
-static void outbox_failed_callback(DictionaryIterator *iterator, AppMessageResult reason, void *context) {
-    APP_LOG(APP_LOG_LEVEL_ERROR, "Outbox send failed!");
-}
-
-static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
-    APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
-}
-
 
 static void update_time() {
     // Get a tm structure
@@ -92,6 +63,8 @@ static void main_window_unload(Window *window) {
 // ----
 
 static void init() {
+    APP_LOG(APP_LOG_LEVEL_INFO, "init");
+
     // Create main Window element and assign to pointer
     s_main_window = window_create();
 
@@ -109,18 +82,10 @@ static void init() {
 
     // Register with TickTimerService
     tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
-    
-    // Register callbacks
-    app_message_register_inbox_received(inbox_received_callback);
-    app_message_register_inbox_dropped(inbox_dropped_callback);
-    app_message_register_outbox_failed(outbox_failed_callback);
-    app_message_register_outbox_sent(outbox_sent_callback);
-
-    // Open AppMessage
-    app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
 }
 
 static void deinit() {
+    APP_LOG(APP_LOG_LEVEL_INFO, "deinit");
     // Destroy Window
     window_destroy(s_main_window);
 }

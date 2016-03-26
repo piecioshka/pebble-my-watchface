@@ -4,8 +4,16 @@
 
 ## Build
 
+Test on emulator:
+
 ```
 pebble build && pebble install --emulator basalt
+```
+
+Deploy to device:
+
+```
+pebble install --cloudpebble
 ```
 
 ## Help links
