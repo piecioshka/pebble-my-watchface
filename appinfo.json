@@ -1,7 +1,7 @@
 {
     "uuid": "ca871efd-e2b5-49ed-b4ca-f91ef4a95e30",
-    "shortName": "pebble-my-watch-face",
-    "longName": "pebble-my-watch-face",
+    "shortName": "pebble-my-watchface",
+    "longName": "pebble-my-watchface",
     "companyName": "Piotr Kowalski",
     "versionLabel": "1.0",
     "sdkVersion": "3",

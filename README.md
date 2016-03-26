@@ -1,4 +1,4 @@
-# pebble-my-watch-face
+# pebble-my-watchface
 
 > My own Pebble watch face with IP address.
 
