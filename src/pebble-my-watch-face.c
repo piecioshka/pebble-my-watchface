@@ -3,6 +3,7 @@
 static Window *s_main_window;
 static TextLayer *s_hours_layer;
 static TextLayer *s_minutes_layer;
+static GFont s_font;
 
 static void update_time() {
     // Get a tm structure
@@ -35,6 +36,9 @@ static void main_window_load(Window *window) {
     Layer *window_layer = window_get_root_layer(window);
     GRect bounds = layer_get_bounds(window_layer);
 
+    // s_font = fonts_get_system_font(FONT_KEY_ROBOTO_BOLD_SUBSET_49);
+    s_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_OPEN_SANS_60));
+
 
     // Create the TextLayer with specific bounds
     s_hours_layer = text_layer_create(GRect(0, 0, bounds.size.w, 84));
@@ -42,7 +46,7 @@ static void main_window_load(Window *window) {
     // Improve the layout to be more like a watchface
     text_layer_set_background_color(s_hours_layer, GColorClear);
     text_layer_set_text_color(s_hours_layer, GColorBlack);
-    text_layer_set_font(s_hours_layer, fonts_get_system_font(FONT_KEY_ROBOTO_BOLD_SUBSET_49));
+    text_layer_set_font(s_hours_layer, s_font);
     text_layer_set_text_alignment(s_hours_layer, GTextAlignmentCenter);
 
     // Add it as a child layer to the Window's root layer
@@ -56,7 +60,7 @@ static void main_window_load(Window *window) {
     // Improve the layout to be more like a watchface
     text_layer_set_background_color(s_minutes_layer, GColorClear);
     text_layer_set_text_color(s_minutes_layer, GColorBlack);
-    text_layer_set_font(s_minutes_layer, fonts_get_system_font(FONT_KEY_ROBOTO_BOLD_SUBSET_49));
+    text_layer_set_font(s_minutes_layer, s_font);
     text_layer_set_text_alignment(s_minutes_layer, GTextAlignmentCenter);
 
     // Add it as a child layer to the Window's root layer

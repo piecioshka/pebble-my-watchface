@@ -17,6 +17,12 @@
     "appKeys": {
     },
     "resources": {
-        "media": []
+        "media": [
+            {
+                "type": "font",
+                "name": "OPEN_SANS_60",
+                "file": "fonts/open-sans/OpenSans-ExtraBold.ttf"
+            }
+        ]
     }
 }

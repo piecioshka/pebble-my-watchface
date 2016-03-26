@@ -13,7 +13,7 @@ pebble build && pebble install --emulator basalt
 Deploy to device:
 
 ```
-pebble install --cloudpebble
+pebble build && pebble install --cloudpebble
 ```
 
 ## Help links
