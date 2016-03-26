@@ -18,4 +18,6 @@ pebble build && pebble install --cloudpebble
 
 ## Help links
 
-https://github.com/JvetS/PebbleSimulator/blob/master/PebbleSimulator/pebble_fonts.h
+* https://github.com/JvetS/PebbleSimulator/blob/master/PebbleSimulator/pebble_fonts.h
+* https://developer.pebble.com/guides/tools-and-resources/color-picker/
+* https://developer.pebble.com/docs/c/Foundation/Event_Service/TickTimerService/#TimeUnits

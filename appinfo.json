@@ -10,10 +10,13 @@
         "basalt",
         "chalk"
     ],
-    "enableMultiJS": true,
+    "enableMultiJS": false,
     "watchapp": {
-        "watchface": true
+        "watchface": true,
+        "hiddenApp": false,
+        "onlyShownOnCommunication": false
     },
+    "capabilities": [],
     "appKeys": {
     },
     "resources": {

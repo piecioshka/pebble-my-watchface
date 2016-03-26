@@ -25,9 +25,16 @@ static void update_time() {
 
     // Display this time on the TextLayer
     text_layer_set_text(s_minutes_layer, s_minutes_buffer);
+
+
+    // Start vibration on each full hour, probably better way would be checking HOUR_UNIT=true
+    if (tick_time->tm_min == 60) {
+        APP_LOG(APP_LOG_LEVEL_INFO, "full hour");
+        vibes_short_pulse();
+    }
 }
 
-static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
+static void tick_minute_handler(struct tm *tick_time, TimeUnits units_changed) {
     update_time();
 }
 
@@ -97,7 +104,7 @@ static void init() {
     update_time();
 
     // Register with TickTimerService
-    tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+    tick_timer_service_subscribe(MINUTE_UNIT, tick_minute_handler);
 }
 
 static void deinit() {
