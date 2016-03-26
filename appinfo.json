@@ -1,19 +1,23 @@
 {
-  "uuid": "ca871efd-e2b5-49ed-b4ca-f91ef4a95e30",
-  "shortName": "pebble-my-watch-face",
-  "longName": "pebble-my-watch-face",
-  "companyName": "MakeAwesomeHappen",
-  "versionLabel": "1.0",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt", "chalk"],
-  "enableMultiJS": true,
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": []
-  }
+    "uuid": "ca871efd-e2b5-49ed-b4ca-f91ef4a95e30",
+    "shortName": "pebble-my-watch-face",
+    "longName": "pebble-my-watch-face",
+    "companyName": "Piotr Kowalski",
+    "versionLabel": "1.0",
+    "sdkVersion": "3",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "enableMultiJS": true,
+    "watchapp": {
+        "watchface": true
+    },
+    "appKeys": {
+        "dummy": 0
+    },
+    "resources": {
+        "media": []
+    }
 }
