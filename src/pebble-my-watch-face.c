@@ -44,8 +44,8 @@ static void main_window_load(Window *window) {
     s_hours_layer = text_layer_create(GRect(0, 0, bounds.size.w, 84));
 
     // Improve the layout to be more like a watchface
-    text_layer_set_background_color(s_hours_layer, GColorClear);
-    text_layer_set_text_color(s_hours_layer, GColorBlack);
+    text_layer_set_background_color(s_hours_layer, GColorBlack);
+    text_layer_set_text_color(s_hours_layer, GColorWhite);
     text_layer_set_font(s_hours_layer, s_font);
     text_layer_set_text_alignment(s_hours_layer, GTextAlignmentCenter);
 
@@ -58,8 +58,8 @@ static void main_window_load(Window *window) {
     s_minutes_layer = text_layer_create(GRect(0, 84, bounds.size.w, 84));
 
     // Improve the layout to be more like a watchface
-    text_layer_set_background_color(s_minutes_layer, GColorClear);
-    text_layer_set_text_color(s_minutes_layer, GColorBlack);
+    text_layer_set_background_color(s_minutes_layer, GColorBlack);
+    text_layer_set_text_color(s_minutes_layer, GColorWhite);
     text_layer_set_font(s_minutes_layer, s_font);
     text_layer_set_text_alignment(s_minutes_layer, GTextAlignmentCenter);
 
@@ -71,6 +71,9 @@ static void main_window_unload(Window *window) {
     // Destroy TextLayer
     text_layer_destroy(s_hours_layer);
     text_layer_destroy(s_minutes_layer);
+
+    // Unload custom font
+    fonts_unload_custom_font(s_font);
 }
 
 // ----
@@ -99,6 +102,7 @@ static void init() {
 
 static void deinit() {
     APP_LOG(APP_LOG_LEVEL_INFO, "deinit");
+
     // Destroy Window
     window_destroy(s_main_window);
 }
