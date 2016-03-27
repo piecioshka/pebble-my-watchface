@@ -27,8 +27,8 @@ static void update_time() {
     text_layer_set_text(s_minutes_layer, s_minutes_buffer);
 
 
-    // Start vibration on each full hour, probably better way would be checking HOUR_UNIT=true
-    if (tick_time->tm_min == 60) {
+    // Start vibration on each full hour (probably better way would be checking HOUR_UNIT=true)
+    if (tick_time->tm_min == 0) {
         APP_LOG(APP_LOG_LEVEL_INFO, "full hour");
         vibes_short_pulse();
     }
