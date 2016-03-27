@@ -31,6 +31,7 @@ static void update_time() {
     if (tick_time->tm_min == 0) {
         APP_LOG(APP_LOG_LEVEL_INFO, "full hour");
         vibes_short_pulse();
+        light_enable_interaction();
     }
 }
 

@@ -8,6 +8,7 @@
 
 * display hours and minutes in large font
 * start vibration on each full hour, ex. `4:00`, `12:00`
+* enable backlight which is disabled after couple seconds
 
 ## Build
 
@@ -28,3 +29,4 @@ pebble build && pebble install --cloudpebble
 * https://github.com/JvetS/PebbleSimulator/blob/master/PebbleSimulator/pebble_fonts.h
 * https://developer.pebble.com/guides/tools-and-resources/color-picker/
 * https://developer.pebble.com/docs/c/Foundation/Event_Service/TickTimerService/#TimeUnits
+* https://developer.pebble.com/docs/c/User_Interface/Light/
