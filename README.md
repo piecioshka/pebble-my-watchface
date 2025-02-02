@@ -1,6 +1,6 @@
 # pebble-my-watchface
 
-> My own Pebble watchface.
+⌚ My own Pebble watchface.
 
 ![](./resources/images/screenshot.png)
 
@@ -14,13 +14,13 @@
 
 Test on emulator:
 
-```
+```bash
 pebble build && pebble install --emulator basalt
 ```
 
 Deploy to device:
 
-```
+```bash
 pebble build && pebble install --cloudpebble
 ```
 
