@@ -30,3 +30,7 @@ pebble build && pebble install --cloudpebble
 * https://developer.pebble.com/guides/tools-and-resources/color-picker/
 * https://developer.pebble.com/docs/c/Foundation/Event_Service/TickTimerService/#TimeUnits
 * https://developer.pebble.com/docs/c/User_Interface/Light/
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
